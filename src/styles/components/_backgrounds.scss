@@ -29,3 +29,36 @@
         background-image: url('../../assets/bg-web@2x.jpg');
     }
 }
+
+
+
+
+// Background gradient animate
+
+.bg-gradient {
+	background: linear-gradient(-45deg, #F64F59, #C471ED, #12C2E9,#F64F59);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	height: 100vh;
+}
+.text-gradient{
+	background: linear-gradient(-45deg, #F64F59, #C471ED, #12C2E9,#F64F59);
+	background-size: 400% 400%;
+	-webkit-text-fill-color: transparent;
+    background-clip:border-box ;
+	-webkit-background-clip: text;
+	animation: gradient 5s ease infinite;
+
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
