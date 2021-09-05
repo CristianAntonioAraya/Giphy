@@ -1,0 +1,31 @@
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/bg-web@2x.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;  
+}
+@media only screen and (max-width: 600px) {
+    .background{
+        background-image: url('../../assets/bg-mobile@2x.jpg');
+        background-repeat: repeat;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .background{
+        background-image: url('../../assets/bg-tablets.jpg');
+        background-repeat: repeat;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .background{
+        background-image: url('../../assets/bg-tablets.jpg');
+        background-repeat: repeat;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .background{
+        background-image: url('../../assets/bg-web@2x.jpg');
+    }
+}
