@@ -1,7 +1,7 @@
 import React from 'react'
 import NavLink from './NavLink'
 
-const Navbar = () => {
+const Navbar = ({submit, input}) => {
     return (
         <div className="navbar__container">
             <div className="navbar__content">
@@ -13,10 +13,10 @@ const Navbar = () => {
                     <NavLink text={'About'}/>
                 </div>
             </div>
-            <div className="navbar__search bg-gradient">
-                <input className="navbar__search-bar" type="text" placeholder="Search some gif..."/>
-                <button className="navbar__search-btn">Go!</button>
-            </div>
+            <form className="navbar__search bg-gradient" onSubmit={submit}>
+                <input className="navbar__search-bar" type="text" placeholder="Search some gif..." onChange={input}/>
+                <button className="navbar__search-btn" type="submit">Go!</button>
+            </form>
         </div>
     )
 }

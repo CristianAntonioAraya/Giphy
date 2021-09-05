@@ -46,4 +46,7 @@
     font-family: 'Segoe UI';
     font-weight: bold;
     align-items: center;
+    &:hover{
+        background-color: lighten($color: $Bg_Color, $amount: 10);
+    }
 }
