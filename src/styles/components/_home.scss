@@ -1,20 +1,9 @@
 .home__content{
     margin: 1rem 30rem;
 }
-.home__current-container{
+
+.home__nav{
     display: flex;
-    height: 3rem;
-    width: fit-content;
-    background-color: $Red_Color;
-    margin: 1rem 0;
-    padding: 0.2rem 1rem 0.5rem 1rem;
-    border-radius: 10px;
-    align-items: center;
-}
-.home__current{
-    font-size: 25px;
-    color: $Light_Color;
-    font-family: 'Segoe UI';
-    font-weight: bold;
-    font-style: italic;
+    justify-content: space-between;
+    text-align: center;
 }

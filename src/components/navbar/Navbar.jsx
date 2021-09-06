@@ -8,7 +8,7 @@ const Navbar = ({submit, input}) => {
                 <h2 className="navbar__title text-gradient">GIPHY</h2>
                 <div className="navbar__links">
                     <NavLink text={'Trending'}/>
-                    <NavLink text={'Find by ID'}/>
+                    <NavLink text={'Stickers'}/>
                     <NavLink text={'Categories'}/>
                     <NavLink text={'About'}/>
                 </div>

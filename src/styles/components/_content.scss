@@ -23,7 +23,7 @@
     padding: 1rem;
     border-radius: 10px;
     margin: 0.5rem;
-    height: 40rem;
+    height: 39rem;
     background-color: transparent;
     overflow-y: auto;
     overflow-x: hidden;
@@ -31,4 +31,21 @@
 .content__gifs{
     columns: 3;
     width: 100%;
+}
+.content__prev{
+  position: absolute;
+  bottom: 40%;
+  left: 15%;
+  font-size: 100px;
+  cursor: pointer;
+  color: $Red_Color;
+
+}
+.content__next{
+  position: absolute;
+  bottom: 40%;
+  right: 15%;
+  font-size: 100px;
+  cursor: pointer;
+  color: $Red_Color;
 }

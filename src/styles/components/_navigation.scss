@@ -1,0 +1,28 @@
+.navigation__container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.navigation__content{
+    display: flex;
+    height: 3rem;
+    width: fit-content;
+    background-color: $Red_Color;
+    margin: 1rem 0;
+    padding: 0.2rem 1rem 0.5rem 1rem;
+    border-radius: 10px;
+    align-items: center;
+}
+.navigation__current{
+    font-size: 25px;
+    color: $Light_Color;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-style: italic;
+}
+.navigation__page{
+    color: $Light_Color;
+    font-size: 25px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
