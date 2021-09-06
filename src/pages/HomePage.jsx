@@ -6,7 +6,7 @@ import Navigation from '../components/navigation/Navigation';
 const HomePage = () => {
 
     const [search, setSearch] = useState('perros salchichas');
-    const [method, setMethod] = useState('search');
+    const [method, setMethod] = useState('trending');
     const [input, setInput] = useState('');
     const [page, setPage] = useState(1)
 
