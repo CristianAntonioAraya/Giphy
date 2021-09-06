@@ -1,6 +1,9 @@
+.nav__container{
+    display: flex;
+}
 .nav__link{
     margin: 0 1rem;
-
+    cursor: pointer;
 }
 .nav__link-item{
     font-family:'Segoe UI';

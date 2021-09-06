@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import { GetGifs } from '../../services/GetGifs'
 import Gif from '../gif/Gif';
 
-const MainContent = ({search, method, addPage,backPage }) => {
+const MainContent = ({ addPage,backPage }) => {
     
     const [gifs, setGifs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [offset, setoffset] = useState(0)
+
+    const {method,limit,endpoint,offset,search} = useSelector(state => state.params);
     
     useEffect(() => {
         const getGifs = async() => {
             try {
                 setIsLoading(true)
-                const resp = await GetGifs({method, search, offset})
+                const resp = await GetGifs({method, search, offset, endpoint, limit})
                 setGifs(resp.data)
                 setIsLoading(false)
             } catch (error) {
@@ -21,13 +23,13 @@ const MainContent = ({search, method, addPage,backPage }) => {
             }
         }
         getGifs();
-    }, [search,method,offset])
+    }, [search,method,offset,endpoint,limit])
+
+
     const nextPage = () => {
-        setoffset(offset+10)
         addPage();
     }
     const prevPage = () => {
-        setoffset(offset-10)
         backPage();
     }
 

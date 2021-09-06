@@ -1,9 +1,13 @@
 import React from 'react'
-import HomePage from './pages/HomePage'
+import { Provider } from 'react-redux'
+import AppRoutes from './routes/AppRoutes'
+import { store } from './store/store'
 
 const GiphyApp = () => {
     return (
-        <HomePage/>
+        <Provider  store={store}>
+            <AppRoutes/>
+        </Provider>
     )
 }
 
