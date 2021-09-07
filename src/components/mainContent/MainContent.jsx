@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setOffset, setPage, setTotal } from '../../redux/actions/paramsAction';
 import { GetGifs } from '../../services/GetGifs'
 import Gif from '../gif/Gif';
 
@@ -8,7 +9,8 @@ const MainContent = ({ addPage,backPage }) => {
     const [gifs, setGifs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const {method,limit,endpoint,offset,search} = useSelector(state => state.params);
+    const {method,limit,endpoint,offset,search,page} = useSelector(state => state.params);
+    const dispatch = useDispatch();
     
     useEffect(() => {
         const getGifs = async() => {
@@ -16,6 +18,7 @@ const MainContent = ({ addPage,backPage }) => {
                 setIsLoading(true)
                 const resp = await GetGifs({method, search, offset, endpoint, limit})
                 setGifs(resp.data)
+                dispatch(setTotal(resp.pagination.total_count))
                 setIsLoading(false)
             } catch (error) {
                 setIsLoading(true)
@@ -23,14 +26,18 @@ const MainContent = ({ addPage,backPage }) => {
             }
         }
         getGifs();
-    }, [search,method,offset,endpoint,limit])
+    }, [search,method,offset,endpoint,limit,dispatch])
 
 
     const nextPage = () => {
         addPage();
+        dispatch(setOffset(offset+limit),setPage(page+1))
+        dispatch(setPage(page+1))
     }
     const prevPage = () => {
         backPage();
+        dispatch(setOffset(offset-limit))
+        dispatch(setPage(page-1))
     }
 
     if(isLoading){

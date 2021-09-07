@@ -6,6 +6,8 @@ const initialState = {
     limit: 20,
     offset: 0,
     endpoint: 'gifs',
+    page: 1,
+    total: null
 }
 
 export const ParamsReducer = (state= initialState,action) => {
@@ -25,6 +27,21 @@ export const ParamsReducer = (state= initialState,action) => {
             return{
                 ...state,
                 search: action.payload,
+            }
+        case types.setOffset:
+            return{
+                ...state,
+                offset: action.payload,
+            }
+        case types.setPage:
+            return{
+                ...state,
+                page: action.payload,
+            }
+        case types.setTotal:
+            return{
+                ...state,
+                total: action.payload,
             }
 
         default:

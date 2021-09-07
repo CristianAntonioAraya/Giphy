@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router';
-import { SetMethod, setSearch } from '../../actions/paramsAction'
+import { SetMethod, setSearch } from '../../redux/actions/paramsAction'
 import NavLinks from './NavLinks';
 
 

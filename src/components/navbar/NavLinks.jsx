@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { SetEndpoint,SetMethod } from '../../actions/paramsAction'
+import { SetEndpoint,SetMethod } from '../../redux/actions/paramsAction'
 
 const NavLinks = () => {
 

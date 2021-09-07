@@ -1,11 +1,10 @@
-import React,{ useState} from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
+import Pagination from '../pagination/Pagination'
 
 const Navigation = () => {
 
-    const [page, setPage] = useState(1)
-    const {search,endpoint,method} = useSelector(state => state.params)
-
+    const {search,endpoint,method,page} = useSelector(state => state.params)
 
     return (
         <div className="navigation__container">
@@ -16,6 +15,7 @@ const Navigation = () => {
                     : <p className="navigation__current">{endpoint} for: {search}  </p>
                 }
             </div>
+            <Pagination/>
             <div className="navigation__content">
                 <p className="navigation__page">Page: {page}</p>
             </div>
